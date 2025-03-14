@@ -1,0 +1,82 @@
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh; /* Full screen height */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Animated heading */
+.mainContainer h1 {
+  font-size: 2rem;
+  color: cadetblue;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Underline animation */
+.mainContainer h1::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 4px;
+  background-color: bisque;
+  transition: width 0.5s ease-in-out;
+}
+
+.mainContainer h1:hover::after {
+  width: 100%;
+}
+
+/* Smooth input hover effect */
+input {
+  padding: 10px;
+  border: 2px solid cadetblue;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+input:hover {
+  background-color: lightblue;
+  transform: scale(1.05);
+}
+
+/* Button hover effect with pulse animation */
+button {
+  padding: 10px 15px;
+  background-color: cadetblue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: green;
+  transform: scale(1.1);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Fancy fade-in effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mainContainer h1,
+input,
+button {
+  animation: fadeIn 0.8s ease-in-out;
+}
